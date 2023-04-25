@@ -5,7 +5,7 @@
  * Return: ALways 0
  */
 
-int main()
+int main(void)
 {
 	fwrite("_putchar/n");
 	return (0);
