@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _isalpha- checks for alphabetic char
- * @c - the char
+ * @c: the char
  * Return: 1 is upper/ lowercase, 0 is otherwise
  */
 int _isalpha(int c)
