@@ -15,7 +15,7 @@ void times_table(void)
 		{
 			int result = multiplier * num;
 
-			_puthcar(result + '0');
+			_putchar(result + '0');
 			num++;
 		}
 		multiplier++;
