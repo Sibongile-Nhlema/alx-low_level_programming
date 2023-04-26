@@ -12,7 +12,7 @@ int main(void)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
-			sum += 1024 / 1.5;
+			sum += 1024 / 2.5;
 		}
 	}
 	printf("%d\n", sum);
