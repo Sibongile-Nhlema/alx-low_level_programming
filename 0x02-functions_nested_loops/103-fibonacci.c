@@ -6,17 +6,22 @@
  */
 int main(void)
 {
-	int i = 0;
-	long j = 1, k = 2, sum = k;
+        unsigned int limit = 4000000;
+	unsigned int fib2 = 0;
+	unsigned int fib4 = 1;
+	unsigned int fib6;
+	unsigned int sum = 0;
 
-	while ((k = j) < 4000000)
-	{
-		k += j;
-		if (k % 2 == 0)
-			sum += k;
-		j = k - j;
-		++i;
-	}
-	printf("%ld\n", sum);
-	return (0);
+        while (fib4 < 4000000)
+        {
+		fib6 = fib2 + fib4;
+		fib2 = fib4;
+		fib4 = fib6
+                if (fib4 % 2 == 0)
+                {
+                        sum += fib4;
+                }
+        }
+	printf("%d\n", sum);
+        return (0);
 }
