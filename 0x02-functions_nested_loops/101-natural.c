@@ -12,7 +12,7 @@ int main(void)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
-			sum += 1023 / 2;
+			sum += 1023 / 3;
 		}
 	}
 	printf("%d\n", sum);
