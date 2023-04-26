@@ -6,7 +6,7 @@
  */
 void print_times_table(int n)
 {
-        int multi, num, prod;
+	int multi, num, prod;
 
 	if (n >= 0 && n <= 15)
 	{
@@ -18,7 +18,6 @@ void print_times_table(int n)
 				_putchar(',');
 				_putchar(' ');
 				prod = multi * num;
-				
 				if (prod <= 99)
 					_putchar(' ');
 				if (prod <= 9)
