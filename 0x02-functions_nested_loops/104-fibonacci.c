@@ -6,8 +6,8 @@
 int main(void)
 {
 	int count = 2;
-	unsigned long int fib1 = 1, fib2 = 2;
-	unsigned long int ans = fib1 + fib2;
+	unsigned long long int fib1 = 1, fib2 = 2;
+	unsigned long long int ans = fib1 + fib2;
 
 	printf("%lu, ", fib1);
 	printf("%lu, ", fib2);
