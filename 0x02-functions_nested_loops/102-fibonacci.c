@@ -14,13 +14,13 @@ int main(void)
 
 	for (i = 2; i < N; i++)
 	{
-		fib[i] = fib[i-1] + fib[i-2];
+		fib[i] = fib[i - 1] + fib[i - 2];
 	}
 
-	for (i = 0;i < N; i++)
+	for (i = 0; i < N; i++)
 	{
 		printf("%d", fib[i]);
-		if (i < N-1)
+		if (i < N - 1)
 		{
 			printf(", ");
 		}
