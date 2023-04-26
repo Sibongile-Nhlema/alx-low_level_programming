@@ -6,6 +6,10 @@
  */
 void print_times_table(int n)
 {
+	if (n > || n < 0)
+	{
+		return;
+	}
 
 	int num, prod;
 
