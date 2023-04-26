@@ -6,20 +6,20 @@
 int main(void)
 {
 	int count = 2;
-	long int fib1 = 1, fib2 = 2;
-	long int ans = fib1 + fib2;
+	unsigned long int fib1 = 1, fib2 = 2;
+	unsigned long int ans = fib1 + fib2;
 
-	printf("%ld, ", fib1);
-	printf("%ld,", fib2);
+	printf("%lu, ", fib1);
+	printf("%lu,", fib2);
 	while (count <= 98)
 	{
 		if (count == 98)
 		{
-			printf("%ld\n", ans);
+			printf("%lu\n", ans);
 		}
 		else
 		{
-			printf("%ld, ", ans);
+			printf("%lu, ", ans);
 		}
 		fib1 = fib2;
 		fib2 = ans;
