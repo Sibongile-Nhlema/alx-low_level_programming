@@ -5,8 +5,9 @@
  */
 int main(void)
 {
-	int i, n = 50;
-	int fib[n];
+	int i;
+#define N 50
+	int fib[N];
 
 	fib[0] = 1;
 	fib[1] = 2;
