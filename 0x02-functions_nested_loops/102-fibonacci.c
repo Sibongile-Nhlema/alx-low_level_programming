@@ -5,15 +5,15 @@
  */
 int main(void)
 {
-	int i, n =50;
+	int i, n = 50;
 	int fib[n];
 
 	fib[0] = 1;
 	fib[1] = 2;
 
-	for (i =2; i < n; i++)
+	for (i = 2; i < n; i++)
 	{
-		fib[i] = fib[i-1] + fib[1-2];
+		fib[i] = fib[i-1] + fib[i-2];
 	}
 
 	for (i = 0;i < n; i++)
