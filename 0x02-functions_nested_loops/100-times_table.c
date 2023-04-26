@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 #include <stdio.h>
 /**
  *print_times_table - prints the n times table, starting with 0.
@@ -11,11 +12,11 @@ void print_times_table(int n)
 	{
 		return;
 	}
-	for (int i =0; i <= n; i++)
+	for (int i = 0; i <= n; i++)
 	{
 		for (int j = 0; j <= 10; j++)
 		{
-			printf("%d  ", i*j);
+			printf("%d  ", i * j);
 		}
 	}
 }
