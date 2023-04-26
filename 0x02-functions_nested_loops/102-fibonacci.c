@@ -7,7 +7,7 @@ int main(void)
 {
 	int i;
 #define N 50
-	int fib[N];
+	long long int fib[N];
 
 	fib[0] = 1;
 	fib[1] = 2;
