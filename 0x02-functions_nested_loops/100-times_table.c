@@ -6,24 +6,23 @@
  */
 void print_times_table(int n)
 {
-        int n, num, prod;
 
-        for (n = 0; n <= 15; n++)
-        {
-                _putchar('0');
-                for (num = 1; num <= 9;  num++)
-                {
-                        _putchar(',');
-                        _putchar(' ');
+	int num, prod;
 
-                        prod = n * num;
-
-                        if (prod <= 9)
-                                _putchar(' ');
-                        else
-                                _putchar((prod / 10) + '0');
-                        _putchar((prod % 10) + '0');
-                }
-                _putchar('\n');
-        }
+	for (n = 0; n <= 15; n++)
+	{
+		_putchar('0');
+		for (num = 1; num <= 15;  num++)
+		{
+			_putchar(',');
+			_putchar(' ');
+			prod = n * num;
+			if (prod <= 15)
+				_putchar(' ');
+			else
+				_putchar((prod / 10) + '0');
+			_putchar((prod % 10) + '0');
+		}
+		_putchar('\n');
+	}
 }
