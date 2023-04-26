@@ -17,9 +17,9 @@ int main(void)
 		fib[i] = fib[i - 1] + fib[i - 2];
 	}
 
-	for (i = 0; i < N; i++)
+	for (i = 1; i < N; i++)
 	{
-		printf("%d ", fib[i]);
+		printf("%d", fib[i]);
 		if (i < N - 1)
 		{
 			printf(", ");
