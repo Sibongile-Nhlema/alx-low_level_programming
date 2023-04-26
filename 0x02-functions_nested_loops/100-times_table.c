@@ -11,11 +11,11 @@ void print_times_table(int n)
 		return;
 	}
 
-	int num, prod;
-
 	for (n = 0; n <= 15; n++)
 	{
 		_putchar('0');
+		int num, prod;
+
 		for (num = 1; num <= 15;  num++)
 		{
 			_putchar(',');
