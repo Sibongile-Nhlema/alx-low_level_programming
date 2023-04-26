@@ -10,7 +10,7 @@ int main(void)
 	long int ans = fib1 + fib2;
 
 	printf("%ld, ", fib1);
-	printf("%ld," fib2);
+	printf("%ld,", fib2);
 	while (count <= 98)
 	{
 		if (count == 98)
