@@ -15,11 +15,11 @@ int main(void)
 	{
 		if (count == 98)
 		{
-			printf("%lu\n", ans);
+			printf("%llu\n", ans);
 		}
 		else
 		{
-			printf("%lu, ", ans);
+			printf("%llu, ", ans);
 		}
 		fib1 = fib2;
 		fib2 = ans;
