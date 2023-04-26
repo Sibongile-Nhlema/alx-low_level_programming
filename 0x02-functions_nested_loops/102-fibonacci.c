@@ -12,7 +12,7 @@ int main(void)
 	fib[0] = 1;
 	fib[1] = 2;
 
-	for (i = 2; i <= N; i++)
+	for (i = 2; i < N; i++)
 	{
 		fib[i] = fib[i - 1] + fib[i - 2];
 	}
