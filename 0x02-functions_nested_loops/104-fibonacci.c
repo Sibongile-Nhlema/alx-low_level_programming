@@ -9,8 +9,8 @@ int main(void)
 	unsigned long long int fib1 = 1, fib2 = 2;
 	unsigned long long int ans = fib1 + fib2;
 
-	printf("%lu, ", fib1);
-	printf("%lu, ", fib2);
+	printf("%llu, ", fib1);
+	printf("%llu, ", fib2);
 	while (count <= 98)
 	{
 		if (count == 98)
