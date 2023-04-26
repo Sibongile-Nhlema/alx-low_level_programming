@@ -11,7 +11,7 @@ int main(void)
 	unsigned int fib4 = 1;
 	unsigned int fib6;
 	unsigned int sum = 0;
-	
+
 	while (fib4 < limit)
 	{
 		fib6 = fib2 + fib4;
