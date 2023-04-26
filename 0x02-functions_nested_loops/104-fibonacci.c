@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int count = 3;
+	int count = 2;
 	long int fib1 = 1, fib2 = 2;
 	long int ans = fib1 + fib2;
 
