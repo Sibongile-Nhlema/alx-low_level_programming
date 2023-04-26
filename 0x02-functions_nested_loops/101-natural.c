@@ -5,11 +5,12 @@
  */
 int main(void)
 {
-	int sum = i;
 	int i;
 
 	for (i = 1; i < 1024; i++)
 	{
+		int sum = i;
+
 		if (i % 3 == 0 || i % 5 == 0)
 		{
 			sum += 1;
