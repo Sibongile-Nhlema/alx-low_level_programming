@@ -7,7 +7,7 @@ int main(void)
 {
 	int i;
 #define N 50
-	long long int fib[N];
+	unsigned long long int fib[N];
 
 	fib[0] = 1;
 	fib[1] = 2;
@@ -19,7 +19,7 @@ int main(void)
 
 	for (i = 0; i < N; i++)
 	{
-		printf("%lld", fib[i]);
+		printf("%llu", fib[i]);
 		if (i < N - 1)
 		{
 			printf(", ");
