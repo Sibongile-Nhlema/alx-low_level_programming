@@ -19,7 +19,7 @@ int main(void)
 
 	for (i = 0; i < N; i++)
 	{
-		printf("%d", fib[i]);
+		printf("%lld", fib[i]);
 		if (i < N - 1)
 		{
 			printf(", ");
