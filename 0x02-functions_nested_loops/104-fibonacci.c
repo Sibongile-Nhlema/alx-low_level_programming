@@ -8,9 +8,9 @@ int main(void)
 	int count = 3;
 	long int fib1 = 1, fib2 = 2;
 	long int ans = fib1 + fib2;
-	
+
 	printf("%lu, ", fib1);
-	printf("%lu, ", fib2);	
+	printf("%lu, ", fib2);
 	while (count <= 98)
 	{
 		if (count == 50)
