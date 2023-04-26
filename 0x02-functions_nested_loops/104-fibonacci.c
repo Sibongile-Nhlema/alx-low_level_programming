@@ -9,17 +9,17 @@ int main(void)
 	unsigned int fib1 = 1, fib2 = 2;
 	unsigned int ans = fib1 + fib2;
 
-	printf("%d, ", fib1);
-	printf("%d, ", fib2);
+	printf("%llu, ", fib1);
+	printf("%llu, ", fib2);
 	while (count <= 98)
 	{
 		if (count == 98)
 		{
-			printf("%d\n", ans);
+			printf("%llu\n", ans);
 		}
 		else
 		{
-			printf("%d, ", ans);
+			printf("%llu, ", ans);
 		}
 		fib1 = fib2;
 		fib2 = ans;
