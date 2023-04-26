@@ -7,25 +7,15 @@
  */
 void print_times_table(int n)
 {
-	int multi, prod;
-
-	for (n = 0; n <= 15; n++)
+	if (n > 15 || n < 0)
 	{
-		_putchar('0');
-
-		for (multi = 1; multi <= 15; multi++)
+		return;
+	}
+	for (int i =0; i <= n; i++)
+	{
+		for (int j = 0; j <= 10; j++)
 		{
-			_putchar(',');
-			_putchar(' ');
-			prod = n * multi;
-
-			if (prod <= 9)
-				_putchar(' ');
-			else
-				_putchar((prod / 10) + '0');
-
-			_putchar((prod % 10) + '0');
+			printf("%d  ", i*j);
 		}
-		_putchar('\n');
 	}
 }
