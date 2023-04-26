@@ -7,19 +7,25 @@
  */
 void print_times_table(int n)
 {
-	if (n < 0 || n > 15)
-	{
-		return;
-	}
+	int num, multi, prod;
 
-	for (int i = 0; i <= n; i++)
+	for (num = 0; num <= 15; num++)
 	{
-		for (int j = 0; j <= n; j++)
+		_putchar('0');
+
+		for (multi = 1; multi <= 15; multi++)
 		{
-			int value = i * j;
+			_putchar(',');
+			_putchar(' ');
+			prod = num * multi;
+			
+			if (prod <= 9)
+				_putchar(' ');
+			else
+				_putchar((prod / 10) + '0');
 
-			printf("%4d", value);
+			_putchar((prod % 10) + '0');
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
