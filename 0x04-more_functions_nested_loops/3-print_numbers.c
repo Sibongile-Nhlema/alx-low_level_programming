@@ -10,7 +10,10 @@ void print_numbers(void)
 
 	for (num = 48; num < 58; num++)
 	{
+		if (num != 50 && num != 52)
+		{
 		_putchar(num);
+		}
 	}
 	_putchar('\n');
 }
