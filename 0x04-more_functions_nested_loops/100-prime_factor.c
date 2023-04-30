@@ -1,9 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - prints largest prime number in 612852475143
- * Return: Always 
- */
+* main - prints largest prime number in 612852475143
+* Return: Always 0
+*/
 
 int main(void)
 {
