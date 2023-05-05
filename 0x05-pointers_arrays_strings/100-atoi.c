@@ -12,20 +12,17 @@ int _atoi(char *s)
 	int num = 0;
 	int i = 0;
 
-	if (s[0] == '-') /*account for signs*/
-	{
-		sign = -1;
-		i++;
-	}
-	else if (s[0] == '+')
-	{
-		i++;
-	}
-
-	/*convert str to int*/
 	while (s[i] != '\0')
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[i] == '-')
+		{
+			sign = -1;
+		}
+		else if (s[i] == '+')
+		{
+			sign = 1;
+		}
+		else if (s[i] >= '0' && s[i] <= '9')
 		{
 			num = num * 10 + (s[i] - '0');
 		}
@@ -33,15 +30,7 @@ int _atoi(char *s)
 		{
 			break;
 		}
-		else if (s[i] == '-' || s[i] == '+')
-		{
-			/* ignores signed found at the end */
-		}
-		else
-		{
-			/* ignores non-digit characters */
-		}
 		i++;
 	}
-	return (sign * num);
+	return num * sign;
 }
