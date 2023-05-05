@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *leet - function that encodes a string into 1337.
- @str: input
-Return: value of n
+* leet - function that encodes a string into 1337.
+* @str: input
+* Return: value of n
 */
 
 char *leet(char *str)
@@ -24,5 +24,5 @@ char *leet(char *str)
 			}
 		}
 	}
-	return result;
+	return (result);
 }
