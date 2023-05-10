@@ -25,7 +25,6 @@ int _sqrt_recursion_helper(int n, int i)
 /**
  * _sqrt_recursion -  returns the natural square root of a number
  * @n: interger
- * @i: iterrator
  * Return: same as prevoius function
  */
 
