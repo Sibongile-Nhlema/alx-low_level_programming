@@ -1,4 +1,4 @@
-#!bin/bash
-gcc -Wall -pendatic -Werror -Wextra -c *.c
-ar -rc liball.a *.o
-ranlib liball.o
+#!/bin/bash
+gcc -c *.c
+ar -rcs liball.a *.o
+rm *.o
