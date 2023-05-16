@@ -4,7 +4,7 @@
 /**
  * free_grid - frees a 2 dimensional grid using alloc_grid
  * @grid: grid to free
- * @height: height 
+ * @height: height
  * Return: nothing
  */
 
