@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * array_iterator -  executes a function given as a parameter 
+ * array_iterator - executes a function given as a parameter
  * on each element of an array
  * @array: array
- * @size: amount of alem to print
- * @acrion: pointer in regular or hex
+ * @size: amount of elem to print
+ * @action: pointer in regular or hex
  * Return: void
  */
 
