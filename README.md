@@ -1,1 +1,1 @@
-My First README.md low programming
+ A readme for variadic functions
