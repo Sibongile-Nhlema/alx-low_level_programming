@@ -8,7 +8,7 @@ void printMessage(void)__attribute__((constructor));
  * function succeeded
  */
 
-void printMessage()
+void printMessage(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
