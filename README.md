@@ -1,1 +1,1 @@
- A readme for variadic functions
+ A read me for low level programming in c
