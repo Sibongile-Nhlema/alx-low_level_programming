@@ -10,15 +10,24 @@
 
 void print_binary(unsigned long int n)
 {
-	int i;
 	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	int printed = 0;
 
-	for (i = 0; i < (int)(sizeof(unsigned long int) * 8); i++)
+	while (mask)
 	{
-		if ((n & mask) == mask)
-			printf("1");
-		else
-			printf("0");
+		if (n & mask)
+		{
+			putchar('1');
+			printed = 1;
+		}
+		else if (printed)
+		{
+			putchar('0');
+		}
 		mask >>= 1;
 	}
+	if (!printed)
+		{
+			putchar('0');
+		}
 }
