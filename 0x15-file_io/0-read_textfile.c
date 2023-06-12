@@ -5,6 +5,7 @@
  * read_textfile - reads a text file and prints letters
  * @filename: filename
  * @letters: number of letters to be printed
+ * Return: number of bytes read and printed
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -15,9 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t write_size;
 
 	if (filename == NULL)
-	{
 		return (0);
-	}
 
 	file = fopen(filename, "r");
 	if (file == NULL)
@@ -31,7 +30,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		fclose(file);
 		return (0);
 	}
-
 	read_size = fread(buffer, sizeof(char), letters, file);
 	if (read_size == 0)
 	{
@@ -39,7 +37,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
-
 	write_size = write(STDOUT_FILENO, buffer, read_size);
 	if ((size_t)write_size != read_size)
 	{
@@ -47,7 +44,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
-
 	fclose(file);
 	free(buffer);
 	return (read_size);
