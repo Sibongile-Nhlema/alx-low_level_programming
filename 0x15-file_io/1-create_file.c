@@ -12,25 +12,24 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, ret, len = 0;
+	int fd;
 
 	if (filename == NULL)
 		return (-1);
 
-	fd = open(filename, O_WRONLY | O_CREAT | O_EXCL, 0600);
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+
 	if (fd == -1)
-		return (text_content == NULL ? 1 : -1);
+		return (-1);
 
 	if (text_content != NULL)
 	{
-		while (text_content[len] != '\0')
-			len++;
+		int bytes_written = write(fd, text_content, strlen(text_content));
 
-		ret = write(fd, text_content, len);
-		if (ret == -1)
+		if (bytes_written == -1)
 		{
 			close(fd);
-			return (-1);
+			return -1;
 		}
 	}
 	close(fd);
