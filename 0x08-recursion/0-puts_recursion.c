@@ -10,10 +10,13 @@
 
 void _puts_recursion(char *s)
 {
-	while (*s)
+	if (*s)
 	{
-		_putchar(*s);
-		s++;
+		_putchar(*s); /*prints first letter*/
+		_puts_recursion(s + 1); /*add next letter*/
 	}
-	_putchar('\n');
+	else
+	{
+		_putchar('\n');
+	}
 }
