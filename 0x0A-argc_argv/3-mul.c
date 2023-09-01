@@ -54,7 +54,7 @@ int _atoi(char *s)
 	{
 		sign = -1;
 		i++;
-	}/*handles signs*/
+	} /*handles signs*/
 
 	while (s[i] >= '0' && s[i] <= '9')
 	{
