@@ -14,10 +14,12 @@ char *_memset(char *s, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int totalSize = nmemb * size;
-	void *ptr = malloc(totalSize);
+	void *ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
+	if (totalSize == 0)
+		ptr = malloc(1);
+	else
+		ptr = malloc(totalSize);
 
 	if (ptr == NULL)
 		return (NULL);
