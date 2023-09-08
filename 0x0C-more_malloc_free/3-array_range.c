@@ -12,12 +12,15 @@
 int *array_range(int min, int max)
 {
 	/*find size of array */
-	int size = max - min + 1;
-	int *ar = malloc(size * sizeof(int)); /*allocate memory for array*/
+	int size;
+	int *ar; /*allocate memory for array*/
 	int i;
 
 	if (min > max)
 		return (NULL);
+
+	size = max - min + 1;
+	ar = malloc(size * sizeof(int));
 
 	if (ar == NULL)
 		return (NULL);
