@@ -68,12 +68,9 @@ int countWords(char *str)
 	int word_count = 0;
 	int i = 0;
 
-	if (str == NULL || *str == '\0')
-		return (0);
-
 	while (str[i] != '\0')
 	{
-		if (str[i] != ' ' && (str[i + 1] == '\n' || str[i + 1] == '\0'))
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 		{
 			word_count++;
 		}
