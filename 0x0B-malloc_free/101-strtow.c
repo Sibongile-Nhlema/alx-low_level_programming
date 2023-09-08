@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 int countWords(char *str);
+int is_all_spaces(char *str);
 
 /**
  * strtow -  function that splits a string into words
@@ -18,7 +19,7 @@ char **strtow(char *str)
 	int word_length;
 	char **words = malloc((word_count + 1) * sizeof(char *));
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || *str == '\0' || is_all_spaces(str))
 		return (NULL);
 
 	if (words == NULL)
@@ -80,4 +81,21 @@ int countWords(char *str)
 		i++;
 	}
 	return (word_count);
+}
+
+/**
+ * is_all_spaces - checks for empty spaces
+ * @str: string
+ * Return: nothing
+ */
+
+int is_all_spaces(char *str)
+{
+	while (*str != '\0')
+	{
+		if (*str != ' ')
+			return (0);
+		str++;
+	}
+	return (1);
 }
