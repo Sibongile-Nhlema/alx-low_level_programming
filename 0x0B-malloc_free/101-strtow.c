@@ -18,6 +18,9 @@ char **strtow(char *str)
 	int word_length;
 	char **words = malloc((word_count + 1) * sizeof(char *));
 
+	if (str == NULL || *str == '\0')
+		return (NULL);
+
 	if (words == NULL)
 		return (NULL);
 
