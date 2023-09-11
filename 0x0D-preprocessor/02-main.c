@@ -11,7 +11,7 @@ int _putchar(char c);
 
 int main(void)
 {
-	const char* filename = __FILE__;
+	const char *filename = __FILE__;
 	int i = 0;
 
 	while (filename[i] != '\0')
