@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
+	arr = (char *)main;
+
 	for (i = 0; i < num_bytes; i++)
 	{
 		if (i == num_bytes - 1)
