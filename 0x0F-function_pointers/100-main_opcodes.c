@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void print_opcodes(int num_bytes);
-
 /**
  * main - prints its own opcodes
  * @argc: number of arguments
@@ -12,12 +10,13 @@ void print_opcodes(int num_bytes);
 
 int main(int argc, char *argv[])
 {
-	int num_bytes;
+	int num_bytes, i;
+	char *arr;
 
-	if (argc < 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
 	num_bytes = atoi(argv[1]);
@@ -25,28 +24,18 @@ int main(int argc, char *argv[])
 	if (num_bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
-	print_opcodes(num_bytes);
-	return (0);
-}
-
-/**
- * print_opcodes - takes the number of bytes as an argument
- * @num_bytes: counts bytes
- * Return: nothing
- */
-
-void print_opcodes(int num_bytes)
-{
-	int i;
-	void *main_address = __builtin_return_address(0);
-
-	unsigned char *opcodes = (unsigned char *)main_address;
-
 	for (i = 0; i < num_bytes; i++)
-		printf("%02x ", opcodes[i]);
+	{
+		if (i == num_bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx ", arr[i]);
+	}
 
-	printf("\n");
+	return (0);
 }
