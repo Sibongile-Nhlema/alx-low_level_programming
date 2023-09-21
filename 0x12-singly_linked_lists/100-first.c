@@ -1,6 +1,6 @@
 #include "lists.h"
 
-void custom_first(void) __attribute__ ((constructor));
+void custom_first(void)__attribute__((constructor));
 
 /**
  * custom_first - prints a custom sentence before the main
