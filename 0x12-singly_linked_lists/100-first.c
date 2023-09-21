@@ -11,6 +11,6 @@ void custom_first(void) __attribute__((constructor));
 
 void custom_first(void)
 {
-	printf("Welcome to the program!\n");
-	printf("This is the custom first function.\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
