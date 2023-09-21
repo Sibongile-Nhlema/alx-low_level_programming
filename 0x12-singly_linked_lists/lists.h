@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 
 /**
  * struct list_s - singly linked list
@@ -21,6 +22,7 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
+size_t stringlen(const char *str);
 int _putchar(char c);
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);

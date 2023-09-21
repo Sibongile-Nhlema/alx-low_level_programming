@@ -1,8 +1,6 @@
 #include "lists.h"
 #include <string.h>
 
-size_t stringlen(const char *str);
-
 /**
  * add_node - adds a new node at the beginning of a list_t list.
  * @str: data string
@@ -31,7 +29,7 @@ list_t *add_node(list_t **head, const char *str)
 
 /**
  * stringlen - find length of the string
- * @str: string
+ * @str: pointer to string
  *
  * Return: length of string
  */
