@@ -6,7 +6,7 @@ size_t stringlen(const char *str);
 /**
  * add_node - adds a new node at the beginning of a list_t list.
  * @str: data string
- *
+ * @head: double pointer to first node
  * Return: the address of the new element
  */
 
