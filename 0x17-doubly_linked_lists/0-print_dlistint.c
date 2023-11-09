@@ -9,16 +9,19 @@
 size_t print_dlistint(const dlistint_t *h)
 {
 	int count = 0;
+	const dlistint_t *current = h;
 
-	if (h == NULL)
+	if (current == NULL)
 	{
 		return (0);
 	}
 
-	while (h != NULL)
+	while (current != NULL)
 	{
-		printf("%u\n", h->n);
-		h = h->next;
+		printf("%u\n", current->n);
+		if (current->next == h)
+			break; /*circular list*/
+		current = current->next;
 		count++;
 	}
 	return (count);
