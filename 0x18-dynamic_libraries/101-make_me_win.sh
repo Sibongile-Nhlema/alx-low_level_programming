@@ -1,3 +1,3 @@
 #!/bin/bash
-export LD_PRELOAD= ./101-make_me_win.sh
-./gm 9 8 10 24 75 9
+export LD_PRELOAD= libhack.so
+./101-make_me_win.sh
