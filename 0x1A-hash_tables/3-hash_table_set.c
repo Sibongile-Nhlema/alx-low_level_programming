@@ -20,17 +20,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_element == NULL)
 		return (0);
 
-	if (key == NULL || ht->array == NULL)
+	if (key == NULL || ht == NULL || *key == '\0')
 	{
-		free (new_element);
+		free(new_element);
 		return (0);
 	}
+	index = key_index((const unsigned char *)key, ht->size);
 
 	new_element->key = strdup(key);
 	new_element->value = strdup(value);
-	new_element->next = NULL;
+	new_element->next = ht->array[index];
 
-	index = hash_djb2((const unsigned char *)key);
 
 	ht->array[index] = new_element;
 
