@@ -33,6 +33,7 @@ int advanced_binary_recursive(int *array, size_t left,
 
 	if (left <= right)
 	{
+		/* print entire array */
 		mid = left + ((right - left) / 2);
 		printf("Searching in array:");
 		for (i = left; i <= right; i++)
@@ -42,10 +43,11 @@ int advanced_binary_recursive(int *array, size_t left,
 				printf(",");
 		}
 		printf("\n");
-
+		/* check if value is the middle index */
 		if (array[mid] == value)
 		{
-			if (mid == left || array[mid - 1] != value)
+			/* check if middle index is the first occurance*/
+			if (array[mid - 1] != value)
 				return (mid);
 			else
 				return (advanced_binary_recursive(array, left,
