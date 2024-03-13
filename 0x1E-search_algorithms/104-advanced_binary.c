@@ -35,6 +35,10 @@ int advanced_binary_recursive(int *array, size_t left,
 	{
 		/* print entire array */
 		mid = left + ((right - left) / 2);
+		/* handle negative numbers that aren't in the array*/
+		if (array[left] > value)
+			return (-1);
+
 		printf("Searching in array:");
 		for (i = left; i <= right; i++)
 		{
@@ -55,8 +59,10 @@ int advanced_binary_recursive(int *array, size_t left,
 		}
 		else if (array[mid] < value)
 			return (advanced_binary_recursive(array, mid + 1, right, value));
-		else
+		else if (array[mid] > value)
 			return (advanced_binary_recursive(array, left, mid - 1, value));
+		else
+			return (-1);
 	}
 	return (-1);
 }
