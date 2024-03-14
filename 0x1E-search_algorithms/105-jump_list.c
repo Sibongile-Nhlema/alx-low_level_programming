@@ -58,6 +58,12 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 					tmp_prev = prev;
 					prev = tmp_prev->next;
 				}
+				if (prev->index % step != 0)
+				{
+					tmp_prev = prev;
+					prev = tmp_prev->next;
+				}
+				printf("Previous is %lu\n", prev->index);
 				/* perform linear search */
 				return (jump_linear_search(prev, size, value));
 			}
