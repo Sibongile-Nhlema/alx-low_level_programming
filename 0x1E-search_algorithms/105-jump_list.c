@@ -59,15 +59,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
                                         prev = tmp_prev->next;
                                 }
 				/* perform linear search */
-				while (prev != NULL && prev->index < size && prev->n < value)
-				{
-					printf("Value checked at index [%lu] = [%d]\n",
-					       prev->index + 1, prev->n);
-					if (prev->n == value)
-						return (prev);
-					tmp_prev = prev;
-					prev = tmp_prev->next;
-				}
+				return jump_linear_search(prev, size, value);
 			}
 		}
 		/* check for value*/
