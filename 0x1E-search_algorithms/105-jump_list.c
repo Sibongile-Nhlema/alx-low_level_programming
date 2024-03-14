@@ -50,16 +50,16 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 			{
 				printf("Value found between indexes [%lu] and [%lu]\n",
 				       (current->index - step + 1), current->index);
-                                /* find previous node */
-                                prev = list;
-                                while  (prev->next != NULL && prev->index !=
+				/* find previous node */
+				prev = list;
+				while  (prev->next != NULL && prev->index !=
 					(current->index - step))
-                                {
-                                        tmp_prev = prev;
-                                        prev = tmp_prev->next;
-                                }
+				{
+					tmp_prev = prev;
+					prev = tmp_prev->next;
+				}
 				/* perform linear search */
-				return jump_linear_search(prev, size, value);
+				return (jump_linear_search(prev, size, value));
 			}
 		}
 		/* check for value*/
@@ -89,12 +89,12 @@ void print_checked_value(size_t index, int n)
  */
 listint_t *jump_linear_search(listint_t *prev, size_t size, int value)
 {
-	    while (prev != NULL && prev->index < size && prev->n < value)
-	    {
-		    print_checked_value(prev->index, prev->n);
-		    if (prev->n == value)
-			    return (prev);
-		    prev = prev->next;
-	    }
-	    return (prev);
+	while (prev != NULL && prev->index < size && prev->n < value)
+	{
+		print_checked_value(prev->index, prev->n);
+		if (prev->n == value)
+			return (prev);
+		prev = prev->next;
+	}
+	return (prev);
 }
