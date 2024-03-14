@@ -1,5 +1,8 @@
 #include "search_algos.h"
 
+listint_t *jump_linear_search(listint_t *prev, size_t size, int value);
+void print_checked_value(size_t index, int n);
+
 /**
  * jump_list - Searches for a value in a sorted list of integers
  *             using the Jump search algorithm.
@@ -22,7 +25,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	while (current)
 	{
 		/* check if current's index is a factor of step */
-		if ((current->index != 0 && current->index % step == 0) || current->next == NULL)
+		if ((current->index != 0 && current->index % step == 0)
+		    || current->next == NULL)
 		{
 			printf("Value checked at index [%lu] = [%d]\n",
 			       current->index, current->n);
@@ -33,22 +37,14 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 				       (current->index - step), current->index);
 				/* find previous node */
 				prev = list;
-				while  (prev->next != NULL && prev->index != (current->index - step))
+				while  (prev->next != NULL && prev->index !=
+					(current->index - step))
 				{
 					tmp_prev = prev;
 					prev = tmp_prev->next;
 				}
 				/* perform linear search */
-				while (prev->n <= value)
-				{
-					printf("Value checked at index [%lu] = [%d]\n",
-					       prev->index, prev->n);
-					if (prev->n == value)
-						return (prev);
-					tmp_prev = prev;
-					prev = tmp_prev->next;
-				}
-				return (prev);
+				return (jump_linear_search(prev, size, value));
 			}
 			else if (current->n <= value && current->next == NULL)
 			{
@@ -56,7 +52,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 				       (current->index - step + 1), current->index);
                                 /* find previous node */
                                 prev = list;
-                                while  (prev->next != NULL && prev->index != (current->index - step))
+                                while  (prev->next != NULL && prev->index !=
+					(current->index - step))
                                 {
                                         tmp_prev = prev;
                                         prev = tmp_prev->next;
@@ -80,3 +77,32 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	return (NULL);
 }
 
+/**
+ * print_checked_value - Print the value checked during the search.
+ * @index: Index of the node checked.
+ * @n: Value stored in the node.
+ */
+void print_checked_value(size_t index, int n)
+{
+	printf("Value checked at index [%lu] = [%d]\n", index, n);
+}
+
+/**
+ * jump_linear_search - Perform linear search in the list.
+ * @prev: Pointer to the previous node.
+ * @size: Size of the list.
+ * @value: Value to search for.
+ *
+ * Return: Pointer to the node containing the value, or NULL if not found.
+ */
+listint_t *jump_linear_search(listint_t *prev, size_t size, int value)
+{
+	    while (prev != NULL && prev->index < size && prev->n < value)
+	    {
+		    print_checked_value(prev->index, prev->n);
+		    if (prev->n == value)
+			    return (prev);
+		    prev = prev->next;
+	    }
+	    return (prev);
+}
