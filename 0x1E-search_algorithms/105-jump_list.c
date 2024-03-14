@@ -2,6 +2,7 @@
 
 listint_t *jump_linear_search(listint_t *prev, size_t size, int value);
 void print_checked_value(size_t index, int n);
+listint_t *find_previous_node(listint_t *list, size_t index);
 
 /**
  * jump_list - Searches for a value in a sorted list of integers
@@ -36,13 +37,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 				printf("Value found between indexes [%lu] and [%lu]\n",
 				       (current->index - step), current->index);
 				/* find previous node */
-				prev = list;
-				while  (prev->next != NULL && prev->index !=
-					(current->index - step))
-				{
-					tmp_prev = prev;
-					prev = tmp_prev->next;
-				}
+				prev = find_previous_node(list, current->index - step);
 				/* perform linear search */
 				return (jump_linear_search(prev, size, value));
 			}
@@ -51,19 +46,12 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 				printf("Value found between indexes [%lu] and [%lu]\n",
 				       (current->index - step + 1), current->index);
 				/* find previous node */
-				prev = list;
-				while  (prev->next != NULL && prev->index !=
-					(current->index - step))
-				{
-					tmp_prev = prev;
-					prev = tmp_prev->next;
-				}
+				prev = find_previous_node(list, current->index - step);
 				if (prev->index % step != 0)
 				{
 					tmp_prev = prev;
 					prev = tmp_prev->next;
 				}
-				printf("Previous is %lu\n", prev->index);
 				/* perform linear search */
 				return (jump_linear_search(prev, size, value));
 			}
@@ -102,5 +90,21 @@ listint_t *jump_linear_search(listint_t *prev, size_t size, int value)
 			return (prev);
 		prev = prev->next;
 	}
+	return (prev);
+}
+
+/**
+ * find_previous_node - Find the previous node based on the index.
+ * @list: Pointer to the head of the list.
+ * @index: Index of the node to find.
+ *
+ * Return: Pointer to the previous node.
+ */
+listint_t *find_previous_node(listint_t *list, size_t index)
+{
+	listint_t *prev = list;
+
+	while (prev->next != NULL && prev->index != index)
+		prev = prev->next;
 	return (prev);
 }
