@@ -22,7 +22,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	while (current)
 	{
 		/* check if current's index is a factor of step */
-		if (current->index != 0 && current->index % step == 0)
+		if ((current->index != 0 && current->index % step == 0) || current->next == NULL)
 		{
 			printf("Value checked at index [%lu] = [%d]\n",
 			       current->index, current->n);
@@ -50,11 +50,33 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 				}
 				return (prev);
 			}
+			else if (current->n <= value && current->next == NULL)
+			{
+				printf("Value found between indexes [%lu] and [%lu]\n",
+				       (current->index - step), current->index);
+                                /* find previous node */
+                                prev = list;
+                                while  (prev->next != NULL && prev->index != (current->index - step))
+                                {
+                                        tmp_prev = prev;
+                                        prev = tmp_prev->next;
+                                }
+				/* perform linear search */
+				while (prev != NULL && prev->index < size && prev->n < value)
+				{
+					printf("Value checked at index [%lu] = [%d]\n",
+					       prev->index, prev->n);
+					if (prev->n == value)
+						return (prev);
+					tmp_prev = prev;
+					prev = tmp_prev->next;
+				}
+			}
 		}
 		/* check for value*/
 		tmp = current;
 		current = tmp->next;
 	}
-	return (list);
+	return (NULL);
 }
 
