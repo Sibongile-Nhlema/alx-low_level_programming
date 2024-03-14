@@ -31,9 +31,9 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	while (current->next != NULL)
 	{
 		tmp = current;
-		printf("I am valid\n");
+		printf("Value checked at index [%lu] = [%d]\n", i, current->n);
 		current = tmp->next;
 	}
-	return (NULL);
+	return (list);
 }
 
