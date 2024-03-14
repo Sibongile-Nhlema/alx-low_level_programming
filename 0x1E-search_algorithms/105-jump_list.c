@@ -89,7 +89,7 @@ void print_checked_value(size_t index, int n)
  */
 listint_t *jump_linear_search(listint_t *prev, size_t size, int value)
 {
-	while (prev != NULL && prev->index < size && prev->n < value)
+	while (prev != NULL && prev->index < size && prev->n <= value)
 	{
 		print_checked_value(prev->index, prev->n);
 		if (prev->n == value)
